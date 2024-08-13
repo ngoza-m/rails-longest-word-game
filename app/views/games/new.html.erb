@@ -1,0 +1,47 @@
+
+
+
+<div class="container">
+  <div><h2>NEW GAME</h2></div>
+  <div>
+    <ul>
+    <% @letters.each do |letter| %>
+        <li style="display: inline"><%= letter %></li>
+    <% end %>
+    </ul>
+  </div>
+
+  <div style="padding: 20px">
+    <form action="/score" method="post" data-turbo="false">
+      <!-- ... -->
+      <input type="text" name="word" value="<%= params[:word] %>">
+      <input type="submit" value="Guess!">
+    </form>
+  <div>
+</div>
+
+<%# --------------------STYLE------------------------ %>
+<style>
+  h2 {
+    font-size: 35px;
+    margin-bottom: 50px;
+  }
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  ul li {
+  padding: 15px 15px;
+  border: 1px solid #ddd;
+  color: white;
+  font-size: 25px;
+  background: #008000;
+  font-weight: bold;
+  box-shadow: 0 1px 1px #C0C0C0	;
+  margin: 10px;
+}
+</style>
